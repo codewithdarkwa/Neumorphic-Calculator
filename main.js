@@ -1,7 +1,7 @@
 let display = document.getElementById("display");
-let buttons = Array.from(document.querySelectorAll(".btn"));
+let buttons = document.querySelectorAll(".btn");
 
-buttons.map((button) => {
+buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     switch (e.target.innerText) {
       case "AC":
@@ -17,7 +17,7 @@ buttons.map((button) => {
         try {
           display.innerText = eval(display.innerText);
         } catch (error) {
-          display.innerText = "Error";
+          display.innerText = "error";
         }
         break;
       default:
